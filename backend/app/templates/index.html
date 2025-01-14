@@ -1,0 +1,68 @@
+{% extends "base.html" %} {% block content %}
+<h1 style="text-align: center">Enter the following customer details</h1>
+<form id="loanForm">
+  <!-- Salary -->
+  <label for="salary">Salary:</label>
+  <input
+    type="number"
+    id="salary"
+    name="salary"
+    placeholder="Enter annual salary"
+    required
+  /><br />
+
+  <!-- Loan Amount -->
+  <label for="loan_amount">Loan Amount:</label>
+  <input
+    type="number"
+    id="loan_amount"
+    name="loan_amount"
+    placeholder="Enter loan amount"
+    required
+  /><br />
+
+  <!-- Age -->
+  <label for="age">Age:</label>
+  <input
+    type="number"
+    id="age"
+    name="age"
+    placeholder="Enter age"
+    required
+  /><br />
+
+  <!-- Interest Rate -->
+  <label for="interest_rate">Interest Rate:</label>
+  <input
+    type="number"
+    id="interest_rate"
+    name="interest_rate"
+    placeholder="Enter interest rate (%)"
+    step="0.01"
+    required
+  /><br />
+
+  <!-- Remaining Term -->
+  <label for="remaining_term">Remaining Term (in months):</label>
+  <input
+    type="number"
+    id="remaining_term"
+    name="remaining_term"
+    placeholder="Enter remaining term"
+    required
+  /><br />
+
+  <!-- Outstanding Balance -->
+  <label for="outstanding_balance">Outstanding Balance:</label>
+  <input
+    type="number"
+    id="outstanding_balance"
+    name="outstanding_balance"
+    placeholder="Enter outstanding balance"
+    required
+  /><br />
+
+  <!-- Submit Button -->
+  <input type="submit" value="Predict" />
+</form>
+{% endblock %}

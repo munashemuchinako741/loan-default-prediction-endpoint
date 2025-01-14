@@ -1,0 +1,161 @@
+{% extends "base.html" %} {% block content %} {% endblock %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loan Default Predictor</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="static/styles.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Loan Default Predictor</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto"></ul>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+          <div class="position-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="#"> Dashboard </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#LoanForm" id="predictionsLink">
+                  Predictions
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> Settings </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> Reports </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-4">
+          <h1 style="text-align: center">
+            Enter the following customer details
+          </h1>
+          <form id="loanForm">
+            <!-- Salary -->
+            <label for="salary">Salary:</label>
+            <input
+              type="number"
+              id="salary"
+              name="salary"
+              placeholder="Enter annual salary"
+              required
+            /><br /><br />
+
+            <!-- Loan Amount -->
+            <label for="loan_amount">Loan Amount:</label>
+            <input
+              type="number"
+              id="loan_amount"
+              name="loan_amount"
+              placeholder="Enter loan amount"
+              required
+            /><br /><br />
+
+            <!-- Age -->
+            <label for="age">Age:</label>
+            <input
+              type="number"
+              id="age"
+              name="age"
+              placeholder="Enter age"
+              required
+            /><br /><br />
+
+            <!-- Interest Rate -->
+            <label for="interest_rate">Interest Rate:</label>
+            <input
+              type="number"
+              id="interest_rate"
+              name="interest_rate"
+              placeholder="Enter interest rate (%)"
+              step="0.01"
+              required
+            /><br /><br />
+
+            <!-- Remaining Term -->
+            <label for="remaining_term">Remaining Term (in months):</label>
+            <input
+              type="number"
+              id="remaining_term"
+              name="remaining_term"
+              placeholder="Enter remaining term"
+              required
+            /><br /><br />
+
+            <!-- Outstanding Balance -->
+            <label for="outstanding_balance">Outstanding Balance:</label>
+            <input
+              type="number"
+              id="outstanding_balance"
+              name="outstanding_balance"
+              placeholder="Enter outstanding balance"
+              required
+            /><br /><br />
+
+            <!-- Submit Button -->
+            <input type="submit" value="Predict" />
+          </form>
+        </main>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+      <p>&copy; 2025 Loan Default Predictor | All Rights Reserved</p>
+    </footer>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+      feather.replace();
+    </script>
+    <script src="/static/script.js"></script>
+    <script>
+      // Wait for the DOM to load
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get the Predictions link and the form
+        const predictionsLink = document.getElementById("predictionsLink");
+        const loanForm = document.getElementById("loanForm");
+
+        // Add a click event listener to the Predictions link
+        predictionsLink.addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent the default link behavior
+          loanForm.style.display = "block"; // Show the form
+        });
+      });
+    </script>
+  </body>
+</html>
